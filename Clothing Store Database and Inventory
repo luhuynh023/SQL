@@ -1,0 +1,28 @@
+--Create a clothing store database
+
+CREATE TABLE store (id INTEGER PRIMARY KEY, name TEXT, color TEXT, price INTEGER, quanity INTEGER);
+
+INSERT INTO store VALUES
+(1, "shirt", "blue", 12.99, 75),
+(2, "shirt", "purple", 12.99, 45),
+(3, "shirt", "orange", 12.99, 69),
+(4, "shirt", "green", 12.99, 21),
+(5, "shirt", "red", 12.99, 10),
+(6, "pants", "black", 20.99, 40),
+(7, "pants", "blue", 20.99, 62),
+(8, "pants", "gray", 20.99, 40),
+(9, "pants", "white", 20.99, 45),
+(10, "skirt", "black", 17.99, 52),
+(11, "skirt", "white", 17.99, 41),
+(12, "skirt", "blue", 17.99, 10),
+(13, "dress", "black", 15.99, 12),
+(14, "dress", "red", 15.99, 20),
+(15, "dress", "pink", 15.99, 21);
+
+--Display the database ordered by price
+SELECT * FROM store
+ORDER BY price desc;
+
+--What is the quanity of each type of clothing?
+SELECT name, SUM(quanity) FROM store 
+GROUP BY name;
