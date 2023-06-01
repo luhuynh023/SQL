@@ -1,0 +1,172 @@
+/* Create table about the people and what they do here */
+
+CREATE TABLE artists 
+(id INTEGER PRIMARY KEY ,
+artist_name TEXT,
+birthdate TEXT,
+top_song TEXT,
+monthly_listeners INTEGER);
+
+INSERT INTO artists
+(id, artist_name, birthdate, top_song, monthly_listeners) VALUES
+(1, "Bad Bunny", "1994-03-10", "un x100to", 72506536),
+(2, "Taylor Swift", "1989-12-13", "Anti-Hero", 85106508),
+(3, "Harry Styles", "1994-02-01", "As It Was", 65163106),
+(4, "Drake", "1986-10-24", "Search & Rescue", 70879840),
+(5, "Morgan Wallen", "1993-05-13", "Last Night", 24620104),
+(6, "Doja Cat", "1995-10-21", " I Like You", 53032561),
+(7, "Ed Sheeran", "1991-02-17", "Eyes Closed", 87329244),
+(8, "Adele", "1988-05-05", "Set Fire to the Rain", 53901815),
+(9, "The Weeknd", "1990-16-02", "Creepin'", 107881013),
+(10, "Lil Baby", "1994-12-03", "Drip Too Hard", 31564949),
+(11, "Future", "1994-11-20", "Superhero", 56553322),
+(12, "Justin Bieber","1994-03-01", "STAY", 73352160),
+(13, "Post Malone", "1995-07-04", "Chemical", 59709664),
+(14, "Jack Harlow", "1998-03-13", "INDUSTRY BABY", 32186955),
+(15, "Kendrick Lamar", "1987-06-17", "Money Trees", 47611590),
+(16, "Luke Combs", "1990-03-02", "Fast Car", 20842900),
+(17, "Juice WRLD", "1998-12-02", "All Girls Are The Same", 31396993),
+(18, "Glass Animals", NULL , "Heat Waves", 24859381),
+(19, "Lil Durk", "1992,10-23", "All My Life", 25200013),
+(20, "Lil Nas X", "1999-04-09", "INDUSTRY BABY", 33439834),
+(21, "Dua Lipa", "1995-08-22", "Cold Heart", 61939518),
+(22, "Elton John", "1947-03-25", "Cold Heart", 49195879),
+(23, "YoungBoy Never Broke Again", "1999-10-20", "WUSYANAME", 18904600),
+(24, "Rod Wave", "1999-08-27", "Fight The Feeling", 7375384),
+(25, "Kanye West", "1977-06-08", "Heartless", 54784446),
+(26, "Olivia Rodriguez", "2003-20-02", "traitor", 36857997),
+(27, "Beyonce", "1981-09-04", "CUFF IT", 50916434),
+(28, "The Kid LAROI", "2003-08-17", "STAY", 33537521),
+(29, "Billie Eilish", "2001-12-18", "lovely", 54669034),
+(30, "Kodak Black", "1997-06-11", "Angel Pt. 1", 27041963),
+(31, "Lizzo", "1988-04-27", "About Damn Time", 22841475),
+(32, "Gunna", "1993-06-14", "Drip Too Hard", 24818088),
+(33, "Imagine Dragons", NULL, "Bones", 61536815),
+(34, "Latto", "1998-12-22", "Big Energy", 12208701),
+(35, "Chris Stapleton", "1978-04-15", "Tennessee Whiskey", 16104736),
+(36, "Summer Walker", "1996-04-11", "White Tee", 20470157),
+(37, "Walker Hayes", "1979-12-27", "Fancy Like", 5179007),
+(38, "Polo G", "1999-01-06", "Martin & Gina", 23034936),
+(39, "SZA", "1989-11-08", "Kill Bill", 65997739),
+(40, "Bruno Mars", "1985-10-08", "When I Was Your Man", 61376926),
+(41, "Zach Bryan", "1996-04-02", "Something in the Orange", 13548994),
+(42, "Steve Lacy", "1998-05-23", "Bad Habit", 26699949),
+(43, "Eminem", "1972-10-17", "Mockingbird", 66708375),
+(44, "Bailey Zimmerman", "2000-01-27", "Rock and A Hard Place", 9877505),
+(45, "Tyler, The Creator", "1991-03-06", "See You Again", 34484170),
+(46, "Kate Bush", "1958-07-30", "Running Up That Hill", 13180846),
+(47, "Karol G", "1991-02-14", "TQG", 49654552),
+(48, "Kane Brown", "1993-10-21", "Thank God", 12583221),
+(49, "GAYLE", "2004-06-10", "abcdefu", 11914140),
+(50, "Nardo Wick", "2001-12-30", "Hot Boy", 8832840);
+
+CREATE TABLE top_50 
+(id INTEGER PRIMARY KEY, 
+artist_id INTEGER,
+song TEXT,
+artist_name TEXT);
+
+
+INSERT INTO top_50 
+(artist_id, song, artist_name) VALUES
+
+(18, "Heat Waves", "Glass Animals"),
+(3, "As It Was", "Harry Styles"),
+(NULL, "Stay", "The Kid LAROI, Justin Bieber"),
+(8, "Easy On Me", "Adele"),
+(7, "Shivers", "Ed Sheeran"),
+(14, "First Class", "Jack Harlow"),
+(34, "Big Energy", "Latto"),
+(12, "Ghost", "Justin Bieber"),
+(30, "Super Gremlin", "Kodak Black"),
+(NULL, "Cold Heart", "Elton John, Dua Lipa"),
+(NULL, "Wait For U", "Future, Drake, Tems"),
+(31, "About Damn Time", "Lizzo"),
+(7, "Bad Habits", "Ed Sheeran"),
+(20, "Thats What I Want", "Lil Nas X"),
+(NULL, "Enemy", "Imagine Dragons, JID"),
+(NULL, "Industry Baby", "Lil Nas X, Jack Harlow"),
+(49, "abcdefu", "GAYLE"),
+(6, "Need To Know", "Doja Cat"),
+(5, "Wasted On You", "Morgan Wallen"),
+(NULL, "Me Porto Bonito", "Bad Bunny, Chencho Corleone"),
+(6, "Woman", "Doja Cat"),
+(1, "Titi Me Pregunto", "Bad Bunny"),
+(46, "Running Up That Hill", "Kate Bush"),
+(NULL, "We Don't Talk About Bruno", "Carolina Gaitan, Mauro Castillo, Adassa, Rhenzy Feliz, Diane Guerrero, Stephanie Beatriz, Encanto Cast"),
+(3, "Late Night Talking", "Harry Styles"),
+(NULL, "I Like You", "Post Malone, Doja Cat"),
+(5, "You Proof", "Morgan Wallen"),
+(42, "Bad Habit", "Steve Lacy"),
+(NULL, "Sunroof", "Nicky Youre, dazy"),
+(NULL, "One Right Now", "Post Malone, The Weeknd"),
+(26, "Good 4 U", "Olivia Rodrigo"),
+(NULL, "Numb Little Bug", "Em Beihold"),
+(NULL, "Jimmy Cooks", "Drake, 21 Savage"),
+(NULL, "'Til You Can't", "Cody Johnson"),
+(37, "Fancy Like", "Walker Hayes"),
+(16, "The Kind Of Love We Make", "Luke Combs"),
+(NULL, "I Ain't Worried", "OneRepublic"),
+(27, "Break My Soul", "Beyonce"),
+(41, "Something In The Orange", "Zach Bryan"),
+(NULL, "Save Your Tears", "The Weeknd, Ariana Grande"),
+(NULL, "Smokin Out The Window", "Silk Sonic, Bruno Mars, Anderson.Paak"),
+(21, "Levitating", "Dua Lipa"),
+(10, "In A Minute", "Lil Baby"),
+(1, "Moscow Mule", "Bad Bunny"),
+(NULL, "You Right", "Doja Cat, The Weeknd"),
+(NULL, "She Had Me At Heads Carolina", "Cole Swindell"),
+(6, "Vegas", "Doja Cat"),
+(NULL, "Pushin P", "Gunna, Future, Young Thug"),
+(NULL, "Buy Dirt", "Jordan Davis, Luke Bryan"),
+(39,"I Hate U", "SZA");
+
+
+CREATE TABLE collaborations
+(id INTEGER PRIMARY KEY AUTOINCREMENT,
+song TEXT,
+release_date TEXT,
+artist_names TEXT);
+
+INSERT INTO collaborations 
+(song, release_date,  artist_names) VALUES
+("Snow on the Beach", "2022-10-21", "Taylor Swift, Lana Del Rey"),
+("Unholy", "2022-09-22", "Sam Smith, Kim Petras"),
+("I'm Good (Blue)", "2022-26-08", "David Guetta, Bebe Rexha"),
+("Hold Me Closer", "2022-08-26", "Elton John, Britney Spears"),
+("Left and Right", "2022-06-24", "Charlie Puth, Jung Kook"),
+("Jimmy Cooks", "2022-06-17", "Drake, 21 Savage"),
+("I Like You (A Happier Song)", "2022-06-03", "Post Malone, Doja Cat"),
+("Churchill Downs", "2022-05-06", "Jack Harlow, Drake"),
+("Party", "2022-05-06", "Bad, Bunny, Rauw Alejandro"),
+("Me Porto Bonito", "2022-05-06", "Bad Bunny, Chencho Corleone"),
+("Wait for U", "2022-04-29", "Future, Drake, Tems"),
+("Te Felicito", "2022-04-21", "Shakira, Rauw Alejandro"),
+("What Happned to Virgil", "2022-03-11", "Lil Durk, Gunna"),
+("Sweetest Pie", "2022-03-11", "Dua Lipa, Megan Thee Stallion"),
+("Bam Bam", "2022-03-04", "Camila Cabello, Ed Sheeran"),
+("MAMIII", "2022-02-10", "Becky G, Karol G"),
+("Pushin P", "2022-01-07", "Gunna, Future, Young Thug");
+
+
+/*select a query showing songs and artists that are in the top 50*/
+
+SELECT song, top_50.artist_name 
+FROM top_50, artists
+WHERE top_50.artist_name = artists.artist_name 
+AND top_50.song = artists.top_song;
+
+/*select a query showing artists and song collaborations that are in the top 50*/
+
+SELECT top_50.artist_name, collaborations.song
+FROM top_50
+JOIN collaborations
+ON top_50.song = collaborations.song;
+
+/*select a query that shows top 50 songs in descending order but also have a top artist*/
+
+SELECT artists.id, artists.artist_name, top_50.song
+FROM artists
+JOIN top_50
+ON artists.id = top_50.artist_id
+ORDER BY top_50.id;
