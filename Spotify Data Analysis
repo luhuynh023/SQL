@@ -1,0 +1,71 @@
+/*QUERY ARTISTS THAT APPEAR ON THE TOP 50 SPOTIFY ARTISTS MORE THAN ONCE*/
+
+SELECT artist_name, COUNT(*)
+FROM BIT_DB.Spotifydata
+GROUP BY artist_name
+ORDER BY COUNT(*) DESC;
+
+/*QUERY ARTISTS THAT HAVE A POPULARITY HIGHER THAN 90*/
+
+SELECT artist_name, track_name, popularity
+FROM BIT_DB.Spotifydata
+WHERE popularity >= 90
+ORDER BY popularity DESC;
+
+/*QUERY AVERAGE DANCEABILITY*/
+
+SELECT ROUND(AVG(danceability),2)
+AS average_danceability
+FROM BIT_DB.Spotifydata;
+
+/*QUERY WHETHER THE DANCEBILITY FOR EACH TRACK IS ABOVE OR BELOW AVERAGE*/
+
+SELECT artist_name, track_name, danceability,
+CASE 
+WHEN danceability > 0.69 THEN "Above Avg"
+WHEN danceability = 0.69 THEN "Avg"
+WHEN danceability < 0.69 THEN "Below Avg"
+END AS danceability_compare
+FROM BIT_DB.Spotifydata;
+
+/*QUERY TRACKS AND ARTISTS THAT HAVE A DANCEABILITY ABOVE AVERAGE*/
+
+SELECT artist_name, track_name, danceability
+FROM BIT_DB.Spotifydata
+WHERE danceability > 0.69
+ORDER BY danceability DESC;
+
+/*QUERY THE AVERAGE ENERGY OF EACH TRACK*/
+
+SELECT ROUND(AVG(energy),2)
+AS average_energy
+FROM BIT_DB.Spotifydata;
+
+/*QUERY TRACKS THAT HAVE ENERGY ABOVE AVERAGE*/
+
+SELECT artist_name, track_name, energy,
+CASE
+WHEN energy > 0.65 THEN "Above Avg"
+WHEN energy = 0.65 THEN "Avg"
+WHEN energy < 0.65 THEN "Below Avg"
+END AS energy_compare
+FROM BIT_DB.Spotifydata
+WHERE energy_compare = "Above Avg";
+
+/*QUERY TRACKS THAT HAVE ABOVE AVERAGE ENERGY AND DANCEABILITY*/
+
+SELECT artist_name, track_name
+FROM BIT_DB.Spotifydata
+WHERE energy > 0.65
+AND danceability > 0.69;
+
+/QUERY ARTIST THAT HAVE MORE THAN ONE TRACK THAT IS ABOVE AVERAGE IN ENERGY AND DANCEABILITY*/
+
+SELECT artist_name, COUNT(*)
+FROM BIT_DB.Spotifydata
+WHERE energy > 0.65
+AND danceability > 0.69
+GROUP BY artist_name 
+ORDER BY COUNT(*) DESC
+LIMIT 2;
+
