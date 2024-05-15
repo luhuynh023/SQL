@@ -1,0 +1,39 @@
+/Write a query that shows customers who are not in the US/
+SELECT FirstName, LastName, CustomerId, Country
+FROM chinook.customers
+WHERE NOT Country LIKE 'USA';
+
+/Write a query showing customers only from Brazil/
+SELECT FirstName, LastName, CustomerId, Country
+FROM chinook.customers
+WHERE Country = 'Brazil';
+
+/Write a query finding the invoices of customers from Brazil/
+SELECT cust.FirstName, 
+cust.LastName, 
+inv.InvoiceId,
+inv.InvoiceDate,
+inv.BillingCountry
+FROM chinook.customers AS cust
+LEFT JOIN chinook.invoices AS inv
+ON cust.CustomerId = inv.CustomerId
+WHERE Country = 'Brazil';
+
+/Write a query showing employees who are Sales Agents/
+SELECT EmployeeId, LastName, FirstName
+FROM chinook.employees
+WHERE Title LIKE 'Sales% Agent%';
+
+/Write a query listing the billing countries/
+SELECT DISTINCT BillingCountry
+FROM chinook.invoices;
+
+/Write a query showing how many invoices there were in 2009/
+SELECT COUNT(InvoiceDate) AS Total_Invoice_2009
+FROM chinook.invoices
+WHERE InvoiceDate LIKE '%2009%';
+
+/Write a query for the total sales in 2009/
+SELECT SUM(total) AS TotalSales_2009
+FROM chinook.invoices;
+
